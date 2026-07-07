@@ -31,11 +31,16 @@ Tracking work intentionally deferred beyond the 1.0 MVP. Not bugs — planned im
 - [x] **LICENSE** file — MIT, © 2026 Queueue Studios LLC.
 - [x] **`.gitignore`** — excludes `build/`, DerivedData, `*.dmg`, `.DS_Store`, xcuserdata,
       local settings, and credential files.
-- [ ] **Sign & notarize** with the Queueue Studios Apple account. One-time
-      `xcrun notarytool store-credentials`, then run `scripts/build_release.sh`; verify the
-      DMG with `spctl -a -vvv` and `stapler validate` on a clean machine.
-- [ ] **GitHub Release** with the notarized DMG attached + install instructions.
+- [x] **Sign & notarize** — v1.0.0 built via `build_release.sh`: Developer ID (Queueue
+      Studios LLC), Hardened Runtime, notarized + stapled **twice** (app and DMG, so the
+      extracted app passes Gatekeeper offline). Notary profile `ipfs-opener`.
+- [x] **GitHub Release** — https://github.com/queueue-dev/ipfs-opener/releases/tag/v1.0.0
+      with `IPFS-Opener-1.0.0.dmg` attached.
 - [ ] **Screenshots / hero image** for the README and repo social preview.
+- [ ] **Website listing** — add an IPFS Opener blurb to https://queueue.tv/other-apps,
+      under the OpenObject section.
+- [ ] *(Optional)* Clean-machine Gatekeeper test — largely covered by app-stapling
+      (offline-safe), but a true never-saw-the-cert Mac is the final proof.
 - [ ] *(Optional)* **CI** (GitHub Actions) to build + run tests on PRs; notarize on tags.
 - [ ] *(Optional)* **Auto-update** (Sparkle) and/or a **Homebrew Cask** for easier install.
 - [ ] *(Optional)* Host `PRIVACY.md` at a public URL to link from the app/README.
