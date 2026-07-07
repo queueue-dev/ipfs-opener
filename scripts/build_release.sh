@@ -82,6 +82,22 @@ APP_PATH="$EXPORT_DIR/$PRODUCT_NAME.app"
 echo "==> Verifying signature"
 codesign --verify --strict --verbose=2 "$APP_PATH"
 
+# --- Notarize + staple the app (round 1) -------------------------------------
+# Stapling the app itself (not just the DMG) means the copied-out app passes
+# Gatekeeper even on a first launch with no internet.
+if [ "$SKIP_NOTARIZE" = "1" ]; then
+  echo "==> Skipping app notarization (SKIP_NOTARIZE=1)"
+else
+  echo "==> Notarizing the app (round 1 of 2 — waits for Apple)"
+  APP_ZIP="$BUILD_DIR/$PRODUCT_NAME-app.zip"
+  ditto -c -k --keepParent "$APP_PATH" "$APP_ZIP"
+  xcrun notarytool submit "$APP_ZIP" --keychain-profile "$NOTARY_PROFILE" --wait
+  echo "==> Stapling the app"
+  xcrun stapler staple "$APP_PATH"
+  xcrun stapler validate "$APP_PATH"
+  rm -f "$APP_ZIP"
+fi
+
 # --- Build the styled DMG ----------------------------------------------------
 # Layout locked from the design pass: 648×428-pt window (648×396 content + 32-pt
 # title bar), 128-pt icons, background art at packaging/installer_background.png,
@@ -93,13 +109,13 @@ WIN_W=648 ICON_SIZE=128 TITLEBAR=32 "$ROOT/scripts/make_styled_dmg.sh" "$APP_PAT
 echo "==> Signing the DMG"
 codesign --force --sign "$SIGN_IDENTITY" ${TEAM_ID:+--timestamp} "$DMG_PATH"
 
-# --- Notarize ----------------------------------------------------------------
+# --- Notarize + staple the DMG (round 2) -------------------------------------
 if [ "$SKIP_NOTARIZE" = "1" ]; then
-  echo "==> Skipping notarization (SKIP_NOTARIZE=1)"
+  echo "==> Skipping DMG notarization (SKIP_NOTARIZE=1)"
 else
-  echo "==> Submitting for notarization (this waits for Apple)"
+  echo "==> Notarizing the DMG (round 2 of 2 — waits for Apple)"
   xcrun notarytool submit "$DMG_PATH" --keychain-profile "$NOTARY_PROFILE" --wait
-  echo "==> Stapling"
+  echo "==> Stapling the DMG"
   xcrun stapler staple "$DMG_PATH"
   xcrun stapler validate "$DMG_PATH"
 fi

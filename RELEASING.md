@@ -26,9 +26,10 @@ Everything ships under **Queueue Studios LLC** — Apple team `J87JRCN9RM`, GitH
 ./scripts/build_release.sh
 ```
 
-The script: archives (Universal, Hardened Runtime) → exports a Developer ID app → builds the
-styled DMG (background art, 128-pt icons, custom volume icon) → signs it → submits to Apple
-for notarization and waits → staples the ticket → runs a Gatekeeper check.
+The script: archives (Universal, Hardened Runtime) → exports a Developer ID app → notarizes
+& staples the **app** (round 1, so the copied-out app passes Gatekeeper offline) → builds the
+styled DMG (background art, 128-pt icons, custom volume icon) → signs it → notarizes & staples
+the **DMG** (round 2) → runs a Gatekeeper check.
 
 Output: **`build/IPFS Opener.dmg`**
 
