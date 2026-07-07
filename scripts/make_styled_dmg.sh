@@ -90,6 +90,16 @@ if [ -f "$VOLICON" ]; then
   SetFile -a V "$MOUNT/.VolumeIcon.icns"   # hide the icon file itself
 fi
 
+# Guard: Finder writes the window styling into .DS_Store. If it's missing, the
+# styling silently failed (typically when run headless / from a background process
+# that can't drive Finder) — abort rather than ship an unstyled DMG.
+if [ ! -f "$MOUNT/.DS_Store" ]; then
+  echo "!! No .DS_Store was written — Finder window styling failed." >&2
+  echo "!! Run this from a foreground Terminal with GUI access (not a background/headless process)." >&2
+  hdiutil detach "$MOUNT" >/dev/null 2>&1 || true
+  exit 1
+fi
+
 sync
 echo "==> Finalizing"
 hdiutil detach "$MOUNT" >/dev/null

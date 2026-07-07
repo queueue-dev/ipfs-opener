@@ -26,6 +26,10 @@ Everything ships under **Queueue Studios LLC** — Apple team `J87JRCN9RM`, GitH
 ./scripts/build_release.sh
 ```
 
+> ⚠️ **Run this in a foreground Terminal** (a logged-in GUI session). The DMG window styling
+> drives Finder via AppleScript and won't apply from a headless or background process — the
+> script now aborts if the `.DS_Store` styling didn't take, rather than shipping an unstyled DMG.
+
 The script: archives (Universal, Hardened Runtime) → exports a Developer ID app → notarizes
 & staples the **app** (round 1, so the copied-out app passes Gatekeeper offline) → builds the
 styled DMG (background art, 128-pt icons, custom volume icon) → signs it → notarizes & staples
