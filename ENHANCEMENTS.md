@@ -24,8 +24,10 @@ Tracking work intentionally deferred beyond the 1.0 MVP. Not bugs — planned im
 >   team **`J87JRCN9RM`**, "Developer ID Application: Queueue Studios LLC" (already wired
 >   into the project and `build_release.sh`).
 
-- [ ] **Public GitHub repo** (owned by `queueue-dev`) with a well-articulated **README**:
-      what the app does, supported inputs, install steps, privacy stance, screenshots.
+- [x] **Public GitHub repo** — https://github.com/queueue-dev/ipfs-opener (owned by
+      `queueue-dev`, MIT, README rendering). Commits attributed to Queueue Studios LLC via
+      the `299584394+queueue-dev@users.noreply.github.com` noreply email.
+  - [ ] README polish: add screenshots once available.
 - [x] **LICENSE** file — MIT, © 2026 Queueue Studios LLC.
 - [x] **`.gitignore`** — excludes `build/`, DerivedData, `*.dmg`, `.DS_Store`, xcuserdata,
       local settings, and credential files.
