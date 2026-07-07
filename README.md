@@ -7,7 +7,7 @@ required.
 ## Install
 
 1. Download the latest **IPFS Opener.dmg** from the
-   [Releases](https://github.com/queueue-dev/ipfs-opener/releases) page.
+   [Releases](https://github.com/queueue-studios/ipfs-opener/releases) page.
 2. Open the DMG and drag **IPFS Opener** into your **Applications** folder.
 3. Launch it from Applications.
 

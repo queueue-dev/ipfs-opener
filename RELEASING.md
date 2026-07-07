@@ -4,7 +4,7 @@ How to produce the signed, notarized DMG and publish a release. Maintainer refer
 
 ## Identity
 
-Everything ships under **Queueue Studios LLC** — Apple team `J87JRCN9RM`, GitHub `queueue-dev`.
+Everything ships under **Queueue Studios LLC** — Apple team `J87JRCN9RM`, GitHub org `queueue-studios` (publishing as the `queueue-dev` user).
 `scripts/build_release.sh` already defaults to the Queueue Studios signing identity.
 
 ## One-time setup

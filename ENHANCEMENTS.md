@@ -17,15 +17,15 @@ Tracking work intentionally deferred beyond the 1.0 MVP. Not bugs — planned im
 
 > **Identity guardrail (do not get this wrong):** everything public ships under
 > **Queueue Studios LLC**, not the personal identity.
-> - **GitHub:** repo, all commits, and releases use the **`queueue-dev`** user — NOT
->   `mattonchain`. Set local `git config user.name`/`user.email` to queueue-dev's before the
->   first commit, and `gh auth` as queueue-dev.
+> - **GitHub:** the repo lives in the **`queueue-studios`** org; all commits and releases are
+>   made by the **`queueue-dev`** user — NOT `mattonchain`. Set local
+>   `git config user.name`/`user.email` to queueue-dev's, and `gh auth` as queueue-dev.
 > - **Apple:** sign/notarize with the **Queueue Studios LLC** Apple Developer account,
 >   team **`J87JRCN9RM`**, "Developer ID Application: Queueue Studios LLC" (already wired
 >   into the project and `build_release.sh`).
 
-- [x] **Public GitHub repo** — https://github.com/queueue-dev/ipfs-opener (owned by
-      `queueue-dev`, MIT, README rendering). Commits attributed to Queueue Studios LLC via
+- [x] **Public GitHub repo** — https://github.com/queueue-studios/ipfs-opener (owned by
+      the `queueue-studios` org, MIT, README rendering). Commits attributed to Queueue Studios LLC via
       the `299584394+queueue-dev@users.noreply.github.com` noreply email.
   - [ ] README polish: add screenshots once available.
 - [x] **LICENSE** file — MIT, © 2026 Queueue Studios LLC.
@@ -34,7 +34,7 @@ Tracking work intentionally deferred beyond the 1.0 MVP. Not bugs — planned im
 - [x] **Sign & notarize** — v1.0.0 built via `build_release.sh`: Developer ID (Queueue
       Studios LLC), Hardened Runtime, notarized + stapled **twice** (app and DMG, so the
       extracted app passes Gatekeeper offline). Notary profile `ipfs-opener`.
-- [x] **GitHub Release** — https://github.com/queueue-dev/ipfs-opener/releases/tag/v1.0.0
+- [x] **GitHub Release** — https://github.com/queueue-studios/ipfs-opener/releases/tag/v1.0.0
       with `IPFS-Opener-1.0.0.dmg` attached.
 - [ ] **Screenshots / hero image** for the README and repo social preview.
 - [ ] **Website listing** — add an IPFS Opener blurb to https://queueue.tv/other-apps,
