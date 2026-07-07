@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B100000000000000000001 /* IPFSOpenerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000001 /* IPFSOpenerApp.swift */; };
+		B100000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000002 /* ContentView.swift */; };
+		B100000000000000000003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000003 /* SettingsView.swift */; };
+		B100000000000000000004 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000004 /* AppModel.swift */; };
+		B100000000000000000005 /* Varint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000005 /* Varint.swift */; };
+		B100000000000000000006 /* Multibase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000006 /* Multibase.swift */; };
+		B100000000000000000007 /* CIDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000007 /* CIDParser.swift */; };
+		B100000000000000000008 /* InputClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000008 /* InputClassifier.swift */; };
+		B100000000000000000009 /* GatewayResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000009 /* GatewayResolver.swift */; };
+		B10000000000000000000A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000A /* Preferences.swift */; };
+		B10000000000000000000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000B /* Assets.xcassets */; };
+		B10000000000000000000D /* CIDParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000D /* CIDParserTests.swift */; };
+		B10000000000000000000E /* InputClassifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000E /* InputClassifierTests.swift */; };
+		B10000000000000000000F /* GatewayResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000F /* GatewayResolverTests.swift */; };
+		B200000000000000000005 /* Varint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000005 /* Varint.swift */; };
+		B200000000000000000006 /* Multibase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000006 /* Multibase.swift */; };
+		B200000000000000000007 /* CIDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000007 /* CIDParser.swift */; };
+		B200000000000000000008 /* InputClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000008 /* InputClassifier.swift */; };
+		B200000000000000000009 /* GatewayResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100000000000000000009 /* GatewayResolver.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F100000000000000000001 /* IPFSOpenerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPFSOpenerApp.swift; sourceTree = "<group>"; };
+		F100000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F100000000000000000003 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F100000000000000000004 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		F100000000000000000005 /* Varint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Varint.swift; sourceTree = "<group>"; };
+		F100000000000000000006 /* Multibase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multibase.swift; sourceTree = "<group>"; };
+		F100000000000000000007 /* CIDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDParser.swift; sourceTree = "<group>"; };
+		F100000000000000000008 /* InputClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputClassifier.swift; sourceTree = "<group>"; };
+		F100000000000000000009 /* GatewayResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayResolver.swift; sourceTree = "<group>"; };
+		F10000000000000000000A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		F10000000000000000000B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F10000000000000000000C /* IPFSOpener.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IPFSOpener.entitlements; sourceTree = "<group>"; };
+		F10000000000000000000D /* CIDParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDParserTests.swift; sourceTree = "<group>"; };
+		F10000000000000000000E /* InputClassifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputClassifierTests.swift; sourceTree = "<group>"; };
+		F10000000000000000000F /* GatewayResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayResolverTests.swift; sourceTree = "<group>"; };
+		F200000000000000000001 /* IPFSOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPFSOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F200000000000000000002 /* IPFSOpenerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPFSOpenerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D100000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D100000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6100000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				6100000000000000000002 /* IPFSOpener */,
+				6100000000000000000005 /* IPFSOpenerTests */,
+				6100000000000000000006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6100000000000000000002 /* IPFSOpener */ = {
+			isa = PBXGroup;
+			children = (
+				F100000000000000000001 /* IPFSOpenerApp.swift */,
+				F100000000000000000002 /* ContentView.swift */,
+				F100000000000000000003 /* SettingsView.swift */,
+				F100000000000000000004 /* AppModel.swift */,
+				F100000000000000000009 /* GatewayResolver.swift */,
+				6100000000000000000003 /* Parsing */,
+				6100000000000000000004 /* Settings */,
+				F10000000000000000000B /* Assets.xcassets */,
+				F10000000000000000000C /* IPFSOpener.entitlements */,
+			);
+			path = IPFSOpener;
+			sourceTree = "<group>";
+		};
+		6100000000000000000003 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				F100000000000000000005 /* Varint.swift */,
+				F100000000000000000006 /* Multibase.swift */,
+				F100000000000000000007 /* CIDParser.swift */,
+				F100000000000000000008 /* InputClassifier.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		6100000000000000000004 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000A /* Preferences.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6100000000000000000005 /* IPFSOpenerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000D /* CIDParserTests.swift */,
+				F10000000000000000000E /* InputClassifierTests.swift */,
+				F10000000000000000000F /* GatewayResolverTests.swift */,
+			);
+			path = IPFSOpenerTests;
+			sourceTree = "<group>";
+		};
+		6100000000000000000006 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F200000000000000000001 /* IPFSOpener.app */,
+				F200000000000000000002 /* IPFSOpenerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A100000000000000000001 /* IPFSOpener */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C100000000000000000002 /* Build configuration list for PBXNativeTarget "IPFSOpener" */;
+			buildPhases = (
+				D100000000000000000001 /* Sources */,
+				D100000000000000000002 /* Frameworks */,
+				D100000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IPFSOpener;
+			productName = IPFSOpener;
+			productReference = F200000000000000000001 /* IPFSOpener.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A100000000000000000002 /* IPFSOpenerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C100000000000000000003 /* Build configuration list for PBXNativeTarget "IPFSOpenerTests" */;
+			buildPhases = (
+				D100000000000000000004 /* Sources */,
+				D100000000000000000005 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IPFSOpenerTests;
+			productName = IPFSOpenerTests;
+			productReference = F200000000000000000002 /* IPFSOpenerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A00000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A100000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A100000000000000000002 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = C100000000000000000001 /* Build configuration list for PBXProject "IPFSOpener" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6100000000000000000001;
+			productRefGroup = 6100000000000000000006 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A100000000000000000001 /* IPFSOpener */,
+				A100000000000000000002 /* IPFSOpenerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D100000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000000000000000000B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D100000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B100000000000000000004 /* AppModel.swift in Sources */,
+				B100000000000000000002 /* ContentView.swift in Sources */,
+				B100000000000000000007 /* CIDParser.swift in Sources */,
+				B100000000000000000009 /* GatewayResolver.swift in Sources */,
+				B100000000000000000008 /* InputClassifier.swift in Sources */,
+				B100000000000000000006 /* Multibase.swift in Sources */,
+				B10000000000000000000A /* Preferences.swift in Sources */,
+				B100000000000000000003 /* SettingsView.swift in Sources */,
+				B100000000000000000005 /* Varint.swift in Sources */,
+				B100000000000000000001 /* IPFSOpenerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D100000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000000000000000000D /* CIDParserTests.swift in Sources */,
+				B10000000000000000000E /* InputClassifierTests.swift in Sources */,
+				B10000000000000000000F /* GatewayResolverTests.swift in Sources */,
+				B200000000000000000007 /* CIDParser.swift in Sources */,
+				B200000000000000000009 /* GatewayResolver.swift in Sources */,
+				B200000000000000000008 /* InputClassifier.swift in Sources */,
+				B200000000000000000006 /* Multibase.swift in Sources */,
+				B200000000000000000005 /* Varint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C200000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C200000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C200000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IPFSOpener/IPFSOpener.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J87JRCN9RM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "IPFS Opener";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Queueue Studios LLC";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.queueuestudios.IPFSOpener;
+				PRODUCT_NAME = "IPFS Opener";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C200000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IPFSOpener/IPFSOpener.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J87JRCN9RM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "IPFS Opener";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Queueue Studios LLC";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.queueuestudios.IPFSOpener;
+				PRODUCT_NAME = "IPFS Opener";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C200000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = J87JRCN9RM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.queueuestudios.IPFSOpenerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C200000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = J87JRCN9RM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.queueuestudios.IPFSOpenerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C100000000000000000001 /* Build configuration list for PBXProject "IPFSOpener" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C200000000000000000001 /* Debug */,
+				C200000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C100000000000000000002 /* Build configuration list for PBXNativeTarget "IPFSOpener" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C200000000000000000003 /* Debug */,
+				C200000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C100000000000000000003 /* Build configuration list for PBXNativeTarget "IPFSOpenerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C200000000000000000005 /* Debug */,
+				C200000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A00000000000000000001 /* Project object */;
+}

@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Xcode / build artifacts
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.moved-aside
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Release output (distribute via GitHub Releases, not the repo)
+*.dmg
+*.xcarchive
+
+# Design source (kept local; final build assets live in packaging/)
+Graphics/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Notarization / credentials — never commit
+ExportOptions.plist
+*.p12
+*.cer
