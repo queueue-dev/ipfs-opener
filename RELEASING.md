@@ -14,7 +14,7 @@ Everything ships under **Queueue Studios LLC** — Apple team `J87JRCN9RM`, GitH
   [appleid.apple.com](https://appleid.apple.com) → Sign-In and Security → App-Specific Passwords):
 
   ```bash
-  xcrun notarytool store-credentials "IPFSOpener-Notary" \
+  xcrun notarytool store-credentials "ipfs-opener" \
     --apple-id "<your Queueue Studios Apple ID>" \
     --team-id J87JRCN9RM \
     --password "<app-specific password>"

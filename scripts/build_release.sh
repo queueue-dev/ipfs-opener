@@ -6,13 +6,13 @@
 # Prerequisites (one-time):
 #   • A "Developer ID Application" certificate in your login keychain.
 #   • A stored notarytool credential profile:
-#       xcrun notarytool store-credentials "IPFSOpener-Notary" \
+#       xcrun notarytool store-credentials "ipfs-opener" \
 #         --apple-id "you@example.com" --team-id "TEAMID" --password "app-specific-pw"
 #
 # Usage:
 #   TEAM_ID=J87JRCN9RM \
 #   SIGN_IDENTITY="Developer ID Application: Queueue Studios LLC (J87JRCN9RM)" \
-#   NOTARY_PROFILE="IPFSOpener-Notary" \
+#   NOTARY_PROFILE="ipfs-opener" \
 #   ./scripts/build_release.sh
 #
 set -euo pipefail
@@ -25,7 +25,7 @@ PRODUCT_NAME="IPFS Opener"      # PRODUCT_NAME (matches the built .app / executa
 
 SIGN_IDENTITY="${SIGN_IDENTITY:-Developer ID Application: Queueue Studios LLC (J87JRCN9RM)}"
 TEAM_ID="${TEAM_ID:-J87JRCN9RM}"
-NOTARY_PROFILE="${NOTARY_PROFILE:-IPFSOpener-Notary}"
+NOTARY_PROFILE="${NOTARY_PROFILE:-ipfs-opener}"
 SKIP_NOTARIZE="${SKIP_NOTARIZE:-0}"
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
