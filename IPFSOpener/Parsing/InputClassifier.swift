@@ -29,8 +29,8 @@ enum InputError: Error, Equatable {
 /// Classifies raw text into a `ParsedInput` or an `InputError`.
 ///
 /// Supported forms: bare CID, `ipfs://`/`ipns://` URIs, `/ipfs/…` & `/ipns/…`
-/// paths, existing http(s) gateway URLs (path-style or subdomain-style), and a
-/// CID followed by a path/query/fragment.
+/// paths, gateway URLs (path-style or subdomain-style, with or without an
+/// explicit `http(s)://` scheme), and a CID followed by a path/query/fragment.
 enum InputClassifier {
 
     static func classify(_ raw: String) -> Result<ParsedInput, InputError> {
@@ -54,6 +54,15 @@ enum InputClassifier {
         if trimmed.hasPrefix("/ipfs/") { return parseNamespaced(.ipfs, body: String(trimmed.dropFirst("/ipfs/".count))) }
         if trimmed.hasPrefix("/ipns/") { return parseNamespaced(.ipns, body: String(trimmed.dropFirst("/ipns/".count))) }
         if trimmed.hasPrefix("/") { return .failure(.invalidAddress) }
+
+        // A scheme-less gateway URL, e.g. "ipfs.io/ipfs/<cid>" or
+        // "<cid>.ipfs.dweb.link". Browsers routinely hide the "https://" when
+        // showing or copying a URL, so normalize to an absolute URL and parse it
+        // like any other gateway URL (before the bare-CID fallback, which would
+        // otherwise mistake the host for the CID).
+        if looksLikeSchemelessGatewayURL(trimmed) {
+            return parseGatewayURL("https://" + trimmed)
+        }
 
         // Otherwise: a bare CID, optionally with a path/query/fragment.
         return parseNamespaced(.ipfs, body: trimmed)
@@ -103,6 +112,27 @@ enum InputClassifier {
 
         return .success(ParsedInput(namespace: ns, identifier: identifier, path: path,
                                     query: query, fragment: fragment, passthroughURL: nil))
+    }
+
+    /// Heuristically detects a gateway URL that is missing its `http(s)://`
+    /// scheme, e.g. `ipfs.io/ipfs/<cid>` (path-style) or `<cid>.ipfs.dweb.link`
+    /// (subdomain-style). Deliberately narrow: a bare CID has no dots, so it is
+    /// never mistaken for a host, and the actual namespace/CID extraction is left
+    /// to `parseGatewayURL` after the scheme is prepended.
+    private static func looksLikeSchemelessGatewayURL(_ s: String) -> Bool {
+        // The host is everything before the first "/", "?", or "#".
+        let hostEnd = s.firstIndex(where: { $0 == "/" || $0 == "?" || $0 == "#" }) ?? s.endIndex
+        let host = s[..<hostEnd]
+        if host.isEmpty { return false }
+
+        // Subdomain-style: "<id>.ipfs.<host>" / "<id>.ipns.<host>".
+        if host.contains(".ipfs.") || host.contains(".ipns.") { return true }
+
+        // Path-style: "<host>/ipfs/<…>" or "<host>/ipns/<…>", where the leading
+        // segment is a real host (contains a dot) and not itself a CID.
+        let segs = s.split(separator: "/", omittingEmptySubsequences: false).map(String.init)
+        return segs.count >= 2 && (segs[1] == "ipfs" || segs[1] == "ipns")
+            && segs[0].contains(".") && !CIDParser.isValid(segs[0])
     }
 
     private static func parseGatewayURL(_ urlString: String) -> Result<ParsedInput, InputError> {

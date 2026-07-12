@@ -27,7 +27,8 @@ a Developer ID and notarized by Apple, so it opens without security warnings.
 - `ipfs://CID`, `ipfs://CID/path/to/file.html`
 - `/ipfs/CID`, `/ipfs/CID/path/to/file`
 - Existing gateway URLs — path-style (`https://ipfs.io/ipfs/CID`) and subdomain-style
-  (`https://CID.ipfs.dweb.link`); opened as-is by default, or rewritten through your
+  (`https://CID.ipfs.dweb.link`), with or without the `https://` scheme
+  (`ipfs.io/ipfs/CID`); opened as-is by default, or rewritten through your
   preferred gateway (Settings)
 - CID with a path, and preserved query strings / fragments
   (`CID/index.html?mode=display#section`)

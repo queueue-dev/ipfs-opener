@@ -52,6 +52,35 @@ struct InputClassifierTests {
         #expect(p.passthroughURL != nil)
     }
 
+    @Test func schemelessPathStyleGatewayURL() throws {
+        // Browsers hide the "https://", so a copied "ipfs.io/ipfs/CID" is common.
+        let p = try #require(parsed("ipfs.io/ipfs/\(cidV0)/a/b"))
+        #expect(p.namespace == .ipfs)
+        #expect(p.identifier == cidV0)
+        #expect(p.path == "a/b")
+        #expect(p.passthroughURL?.absoluteString == "https://ipfs.io/ipfs/\(cidV0)/a/b")
+    }
+
+    @Test func schemelessPathStyleGatewayURLPreservesQueryFragment() throws {
+        let p = try #require(parsed("dweb.link/ipfs/\(cidV1)/index.html?mode=display#section"))
+        #expect(p.identifier == cidV1)
+        #expect(p.path == "index.html")
+        #expect(p.query == "mode=display")
+        #expect(p.fragment == "section")
+        #expect(p.passthroughURL != nil)
+    }
+
+    @Test func schemelessSubdomainStyleGatewayURL() throws {
+        let p = try #require(parsed("\(cidV1).ipfs.dweb.link"))
+        #expect(p.namespace == .ipfs)
+        #expect(p.identifier == cidV1)
+        #expect(p.passthroughURL != nil)
+    }
+
+    @Test func schemelessHostWithoutIPFSSegmentIsRejected() {
+        #expect(InputClassifier.classify("example.com/not/ipfs") == .failure(.invalidAddress))
+    }
+
     @Test func rejectsEmpty() {
         #expect(InputClassifier.classify("   ") == .failure(.empty))
     }
